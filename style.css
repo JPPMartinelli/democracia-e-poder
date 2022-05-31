@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*-----HEADER-----*/
+
+header {
+    margin: 4% auto 0 auto;
+    width: 50%;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 4%;
+    font-size: 4.5rem;
+    font-family: sans-serif;
+}
+
+span.poder {
+    color: rgb(165, 35, 35);
+}
+
+/* ------MAIN------- */
+
+body.index {    
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 123px;
+}
+span.comecar {
+    background-color: rgb(165, 35, 35);
+    box-shadow: 0px 0px 9px black;
+    padding: 10%;
+    border-radius: 15px;
+    transform: scale(0) translateX(0);
+
+
+    font-size: 2.0rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span.comecar:hover {
+    transform: translateX(1.1);
+    transition: 0.5s;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(222, 213, 213);
+}
+
+a:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: rgb(165, 35, 35);;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 1.5rem;
+}
+
+/* ------- JOGO DA MEMÓRIA-------- */
+
+body.jogo-da-memoria {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.parent {
+    width: 62%;
+    max-width: 1717px;
+    margin: auto;
+    height: 90vh;
+    max-height: 986px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33.3% 33.3% 33.3%;
+}
+
+
+
+
+span.carta {
+    background-color: white;
+    margin: 1%;
+    border: 1px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1);
+    z-index: 0;
+    transition: transform 0.5s, z-index 0.5s, box-shadow 0.5s;
+}
+
+span.carta:hover {
+    transform: scale(1.05);
+    z-index: 1;
+    box-shadow: 0px 0px 19px black;
+}
+
+#alerta_comeco {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.84);
+    display: flex;
+    align-items: center;
+}
+
+#aviso {
+    width: 100vw;
+    height: 35vh;
+    background-color: white;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    box-shadow: 0px 0px 19px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+#aviso h1 {
+    text-align: center;
+    margin: 0;
+    z-index: 3;
+}
+
+#explicacao {
+    width: 100vw;
+    height: 80vh;
+    background-color: white;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    box-shadow: 0px 0px 19px black;
+    z-index: 3;
+}
+
+#container {
+    border-radius: 15px;
+    width: 86vw;
+    min-width: 200px;
+}
+img{
+   width: 100%; 
+   border-radius: 15px;
+}
+
+span#voltar {
+    cursor: pointer;
+}

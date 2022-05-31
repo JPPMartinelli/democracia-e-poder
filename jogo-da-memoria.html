@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Sociologia</title>
+
+    <link rel="stylesheet" href="style.css">
+   <script src="jogo-da-memoria.js" defer></script>
+</head>
+<body class="jogo-da-memoria" onload="controladora()">
+    <div class="parent">
+        <span class="carta" id="carta-1" onclick="selecionador(0)" "></span>
+        <span class="carta" id="carta-2" onclick="selecionador(1)" "></span>
+        <span class="carta" id="carta-3" onclick="selecionador(2)" "></span>
+        <span class="carta" id="carta-4" onclick="selecionador(3)" "></span>
+        <span class="carta" id="carta-5" onclick="selecionador(4)" "></span>
+        <span class="carta" id="carta-6" onclick="selecionador(5)" "></span>
+        <span class="carta" id="carta-7" onclick="selecionador(6)" "></span>
+        <span class="carta" id="carta-8" onclick="selecionador(7)" "></span>
+        <span class="carta" id="carta-9" onclick="selecionador(8)" "></span>
+        <span class="carta" id="carta-10" onclick="selecionador(9)" "></span>
+        <span class="carta" id="carta-11" onclick="selecionador(10)" "></span>
+        <span class="carta" id="carta-12" onclick="selecionador(11)" "></span>
+    </div>
+
+    <div id="alerta_comeco">
+        <div id="aviso">
+            <h1>MEMORIZE</h1>
+        </div>
+        <div id="explicacao">
+            <div id="container">
+                <img src="imagens/background-header.jpg" alt="">
+            </div>
+            <p>Lorem ipsum dolor sit, aet consectetur adipisicing elit. Aliquid at nihil fuga reiciendis nesciunt autem sint nulla, cumque iure magnam doloribus nisi commodi dicta aperiam ducimus soluta, suscipit exercitationem molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, voluptatum blanditiis quod totam repellendus quae facere, excepturi a optio impedit fugiat explicabo suscipit. Molestiae adipisci officiis consequuntur deserunt omnis nihil!Lorem</p>
+            <span id="voltar" onclick="voltarJogo()">VOLTAR</span>
+        </div>
+    </div>
+</body>
+</html>
