@@ -94,6 +94,8 @@ function visualizacao() {
 
     carta[posiVermelho[0]].style.background = 'url(imagens/background-header.jpg)'
     carta[posiVermelho[1]].style.background = 'url(imagens/background-header.jpg)'
+    carta[posiVermelho[0]].style.backgroundSize = '100% 100%'
+    carta[posiVermelho[1]].style.backgroundSize = '100% 100%'
 
     carta[posiAzul[0]].style.background = 'blue'
     carta[posiAzul[1]].style.background = 'blue'
@@ -254,6 +256,7 @@ function mudaEstado(c){
     carta[c].style.zIndex = '2'
     if (c == posiVermelho[0] || c == posiVermelho[1]) {
         carta[c].style.background = 'url(imagens/background-header.jpg)'
+        carta[c].style.backgroundSize = '100% 100%'
     } else if (c == posiAzul[0] || c == posiAzul[1]) {
         carta[c].style.background = 'blue'
     } else if (c == posiVerde[0] || c == posiVerde[1]) {
@@ -285,6 +288,8 @@ function verificadorIgualdade(cartasSelecionadas) {
 
         carta[posiVermelho[0]].style.background = 'url(imagens/background-header.jpg)'
         carta[posiVermelho[1]].style.background = 'url(imagens/background-header.jpg)'
+        carta[posiVermelho[0]].style.backgroundSize = '100% 100%'
+        carta[posiVermelho[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
         setTimeout (
