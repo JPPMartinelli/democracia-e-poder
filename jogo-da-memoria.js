@@ -92,8 +92,8 @@ function atribuiPares() {
 
 function visualizacao() {
 
-    carta[posiVermelho[0]].style.background = 'url(imagens/background-header.jpg)'
-    carta[posiVermelho[1]].style.background = 'url(imagens/background-header.jpg)'
+    carta[posiVermelho[0]].style.background = 'url(imagens/sociologia-absolutismo.jpg)'
+    carta[posiVermelho[1]].style.background = 'url(imagens/sociologia-absolutismo.jpg)'
     carta[posiVermelho[0]].style.backgroundSize = '100% 100%'
     carta[posiVermelho[1]].style.backgroundSize = '100% 100%'
 
@@ -255,7 +255,7 @@ function mudaEstado(c){
     carta[c].style.boxShadow = '0px 0px 19px black'
     carta[c].style.zIndex = '2'
     if (c == posiVermelho[0] || c == posiVermelho[1]) {
-        carta[c].style.background = 'url(imagens/background-header.jpg)'
+        carta[c].style.background = 'url(imagens/sociologia-absolutismo.jpg)'
         carta[c].style.backgroundSize = '100% 100%'
     } else if (c == posiAzul[0] || c == posiAzul[1]) {
         carta[c].style.background = 'blue'
@@ -286,8 +286,8 @@ function armazenaSelecionados(c) {
 function verificadorIgualdade(cartasSelecionadas) {
     if (cartasSelecionadas[0] == cartasVermelhas[0] && cartasSelecionadas[1] == cartasVermelhas[1] || cartasSelecionadas[1] == cartasVermelhas[0] && cartasSelecionadas[0] == cartasVermelhas[1]) {
 
-        carta[posiVermelho[0]].style.background = 'url(imagens/background-header.jpg)'
-        carta[posiVermelho[1]].style.background = 'url(imagens/background-header.jpg)'
+        carta[posiVermelho[0]].style.background = 'url(imagens/sociologia-absolutismo.jpg)'
+        carta[posiVermelho[1]].style.background = 'url(imagens/sociologia-absolutismo.jpg)'
         carta[posiVermelho[0]].style.backgroundSize = '100% 100%'
         carta[posiVermelho[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])

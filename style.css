@@ -100,6 +100,7 @@ body.jogo-da-memoria {
 
 span.carta {
     background-color: white;
+    background: url(imagens/sociologia-absolutismo.jpg);
     margin: 1%;
     border: 1px solid black;
     border-radius: 15px;
