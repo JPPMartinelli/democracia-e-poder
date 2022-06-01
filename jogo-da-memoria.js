@@ -2,6 +2,8 @@
 
 /* 
     VERMELHO = ABSOLUTISMO
+    AZUL = LIBERALISMO
+    VERDE = SOVIÉTICO
 */
 
 var carta = []
@@ -105,11 +107,16 @@ function visualizacao() {
     carta[posiVermelho[0]].style.backgroundSize = '100% 100%'
     carta[posiVermelho[1]].style.backgroundSize = '100% 100%'
 
-    carta[posiAzul[0]].style.background = 'blue'
-    carta[posiAzul[1]].style.background = 'blue'
+    carta[posiAzul[0]].style.background = 'url(imagens/sociologia-liberalismo-cortada.jpg)'
+    carta[posiAzul[1]].style.background = 'url(imagens/sociologia-liberalismo-cortada.jpg)'
+    carta[posiAzul[0]].style.backgroundSize = '100% 100%'
+    carta[posiAzul[1]].style.backgroundSize = '100% 100%'
 
-    carta[posiVerde[0]].style.background = 'green'
-    carta[posiVerde[1]].style.background = 'green'
+
+    carta[posiVerde[0]].style.background = 'url(imagens/sociologia-sovietico.jpg)'
+    carta[posiVerde[1]].style.background = 'url(imagens/sociologia-sovietico.jpg)'
+    carta[posiVerde[0]].style.backgroundSize = '100% 100%'
+    carta[posiVerde[1]].style.backgroundSize = '100% 100%'
 
     carta[posiPreto[0]].style.background = 'black'
     carta[posiPreto[1]].style.background = 'black'
@@ -270,9 +277,11 @@ function mudaEstado(c){
         carta[c].style.background = 'url(imagens/sociologia-absolutismo.jpg)'
         carta[c].style.backgroundSize = '100% 100%'
     } else if (c == posiAzul[0] || c == posiAzul[1]) {
-        carta[c].style.background = 'blue'
+        carta[c].style.background = 'url(imagens/sociologia-liberalismo-cortada.jpg)'
+        carta[c].style.backgroundSize = '100% 100%'
     } else if (c == posiVerde[0] || c == posiVerde[1]) {
-        carta[c].style.background = 'green'
+        carta[c].style.background = 'url(imagens/sociologia-sovietico.jpg)'
+        carta[c].style.backgroundSize = '100% 100%'
     } else if (c == posiPreto[0] || c == posiPreto[1]) {
         carta[c].style.background = 'black'
     } else if (c == posiAmarelo[0] || c == posiAmarelo[1]) {
@@ -304,29 +313,27 @@ function verificadorIgualdade(cartasSelecionadas) {
         carta[posiVermelho[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
-        setTimeout (
-            function(){
-                memorize.style.display = 'flex'
-                explicacao.style.display = 'flex'
-                aviso.style.display = 'none'
-                imgExplicacao.setAttribute('src', 'imagens/sociologia-absolutismo.jpg')
-                imgExplicacao.style.width = '86%'
-            }, 500
-        )
+        mostrarExplicacao('imagens/sociologia-absolutismo.jpg', '86%')
 
     } else if (cartasSelecionadas[0] == cartasAzuis[0] && cartasSelecionadas[1] == cartasAzuis[1] || cartasSelecionadas[1] == cartasAzuis[0] && cartasSelecionadas[0] == cartasAzuis[1]) {
 
-        carta[posiAzul[0]].style.background = 'blue'
-        carta[posiAzul[1]].style.background = 'blue'
+        carta[posiAzul[0]].style.background = 'url(imagens/sociologia-liberalismo-cortada.jpg)'
+        carta[posiAzul[1]].style.background = 'url(imagens/sociologia-liberalismo-cortada.jpg)'
+        carta[posiAzul[0]].style.backgroundSize = '100% 100%'
+        carta[posiAzul[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
+        mostrarExplicacao('imagens/sociologia-liberalismo.jpg', '86%')
         
     } else if (cartasSelecionadas[0] == cartasVerde[0] && cartasSelecionadas[1] == cartasVerde[1] || cartasSelecionadas[1] == cartasVerde[0] && cartasSelecionadas[0] == cartasVerde[1]) {
        
-        carta[posiVerde[0]].style.background = 'green'
-        carta[posiVerde[1]].style.background = 'green'
+        carta[posiVerde[0]].style.background = 'url(imagens/sociologia-sovietico.jpg)'
+        carta[posiVerde[1]].style.background = 'url(imagens/sociologia-sovietico.jpg)'
+        carta[posiVerde[0]].style.backgroundSize = '100% 100%'
+        carta[posiVerde[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
+        mostrarExplicacao('imagens/sociologia-sovietico.jpg', '86%')
 
     } else if (cartasSelecionadas[0] == cartasPreto[0] && cartasSelecionadas[1] == cartasPreto[1] || cartasSelecionadas[1] == cartasPreto[0] && cartasSelecionadas[0] == cartasPreto[1]) {
 
@@ -437,4 +444,16 @@ function voltarJogo() {
     } else{
         memorize.style.display = 'none'
     }
+}
+
+function mostrarExplicacao(imagem, width) {
+    setTimeout (
+        function(){
+            memorize.style.display = 'flex'
+            explicacao.style.display = 'flex'
+            aviso.style.display = 'none'
+            imgExplicacao.setAttribute('src', imagem)
+            imgExplicacao.style.width = width
+        }, 500
+    )
 }
