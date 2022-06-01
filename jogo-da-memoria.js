@@ -1,5 +1,9 @@
 /* FEITO POR JOÃO PEDRO MARTINELLI */
 
+/* 
+    VERMELHO = ABSOLUTISMO
+*/
+
 var carta = []
 var random = Math.floor(Math.random()*12)
 
@@ -35,6 +39,7 @@ var verificaMarrom = 0
 var explicacao = document.getElementById('explicacao')
 var memorize = document.getElementById('alerta_comeco')
 var aviso = document.getElementById('aviso')
+var imgExplicacao = document.getElementById('img-explicacao')
 
 function controladora() {
     setTimeout (
@@ -297,7 +302,9 @@ function verificadorIgualdade(cartasSelecionadas) {
                 memorize.style.display = 'flex'
                 explicacao.style.display = 'flex'
                 aviso.style.display = 'none'
-            }, 1000
+                imgExplicacao.setAttribute('src', 'imagens/sociologia-absolutismo.jpg')
+                imgExplicacao.style.width = '86%'
+            }, 500
         )
 
     } else if (cartasSelecionadas[0] == cartasAzuis[0] && cartasSelecionadas[1] == cartasAzuis[1] || cartasSelecionadas[1] == cartasAzuis[0] && cartasSelecionadas[0] == cartasAzuis[1]) {
