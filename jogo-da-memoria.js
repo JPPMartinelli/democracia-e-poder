@@ -1,3 +1,5 @@
+/* FEITO POR JOÃO PEDRO MARTINELLI */
+
 var carta = []
 var random = Math.floor(Math.random()*12)
 
