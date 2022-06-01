@@ -29,6 +29,8 @@ var cartasSelecionadas = []
 
 var paresFormados = []
 
+var podeJogar = false
+
 var verificaVermelho = 0
 var verificaAzul = 0
 var verificaVerde = 0
@@ -46,14 +48,15 @@ function controladora() {
         function() {
             memorize.style.display = 'none'
         },
-        4000
+        2000
     )
     setTimeout (
     function() {atribuiID()
     atribuiPares()
     visualizacao()
+    
     },
-    4000
+    2000
     )
 }
 
@@ -136,6 +139,8 @@ function visualizacao() {
 
             carta[posiMarrom[0]].style.background = 'white'
             carta[posiMarrom[1]].style.background = 'white'
+
+            podeJogar = true
         },
         5000
     )
@@ -244,6 +249,8 @@ function atribuiMarrom() {
 
 // ONCLICK EVENTOS
 function selecionador(c){
+    if(podeJogar){
+    
     mudaEstado(c)
     armazenaSelecionados(c)
     
@@ -251,9 +258,9 @@ function selecionador(c){
         verificadorIgualdade(cartasSelecionadas)
         voltaEstado(cartasSelecionadas)
         cartasSelecionadas = []
+    } 
     }
 }
-
 
 function mudaEstado(c){
     carta[c].style.transform = 'scale(1.05)'
