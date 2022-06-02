@@ -56,6 +56,10 @@ var liberalismoExplicacao = 'Se opôs ao governo controlador e centralizador do 
 
 var fascismoExplicacao = 'Essa forma de Estado foi implantada e se desenvolveu nas décadas de 1920 a 1940, primeiro na Itália, depois na Alemanha e em vários outros países europeus, com pequenas diferenças. A base econômica desse Estado era capitalista.'
 
+var bemEstarExplicacao = 'O Estado de bem-estar social ou Estado social, surgiu nos EUA e tinha como objetivo romper com o liberalismo, tinha como característica a intervenção estatal na economia.'
+
+var neoliberalismoExplicacao = 'Neoliberalismo é uma doutrina socioeconômica que retoma os antigos ideais do liberalismo clássico ao sugerir a mínima intervenção do Estado na economia.'
+
 function controladora() {
     setTimeout (
         function() {
@@ -134,11 +138,15 @@ function visualizacao() {
     carta[posiPreto[0]].style.backgroundSize = '100% 100%'
     carta[posiPreto[1]].style.backgroundSize = '100% 100%'
 
-    carta[posiAmarelo[0]].style.background = 'yellow'
-    carta[posiAmarelo[1]].style.background = 'yellow'
+    carta[posiAmarelo[0]].style.background = 'url(imagens/sociologia-bemEstar.jpg)'
+    carta[posiAmarelo[1]].style.background = 'url(imagens/sociologia-bemEstar.jpg)'
+    carta[posiAmarelo[0]].style.backgroundSize = '100% 100%'
+    carta[posiAmarelo[1]].style.backgroundSize = '100% 100%'
 
-    carta[posiMarrom[0]].style.background = 'brown'
-    carta[posiMarrom[1]].style.background = 'brown'
+    carta[posiMarrom[0]].style.background = 'url(imagens/sociologia-neoLiberalismo.jpg)'
+    carta[posiMarrom[1]].style.background = 'url(imagens/sociologia-neoLiberalismo.jpg)'
+    carta[posiMarrom[0]].style.backgroundSize = '100% 100%'
+    carta[posiMarrom[1]].style.backgroundSize = '100% 100%'
 
     setTimeout(
         function() {
@@ -307,11 +315,13 @@ function mudaEstado(c){
 
     } else if (c == posiAmarelo[0] || c == posiAmarelo[1]) {
 
-        carta[c].style.background = 'yellow'
+        carta[c].style.background = 'url(imagens/sociologia-bemEstar.jpg)'
+        carta[c].style.backgroundSize = '100% 100%'
 
     } else if (c == posiMarrom[0] || c == posiMarrom[1]) {
 
-        carta[c].style.background = 'brown'
+        carta[c].style.background = 'url(imagens/sociologia-neoLiberalismo.jpg)'
+        carta[c].style.backgroundSize = '100% 100%'
     } 
 }
 
@@ -375,17 +385,25 @@ function verificadorIgualdade(cartasSelecionadas) {
 
     } else if (cartasSelecionadas[0] == cartasAmarelo[0] && cartasSelecionadas[1] == cartasAmarelo[1] || cartasSelecionadas[1] == cartasAmarelo[0] && cartasSelecionadas[0] == cartasAmarelo[1]) {
 
-        carta[posiAmarelo[0]].style.background = 'yellow'
-        carta[posiAmarelo[1]].style.background = 'yellow'
+        carta[posiAmarelo[0]].style.background = 'url(imagens/sociologia-bemEstar.jpg)'
+        carta[posiAmarelo[1]].style.background = 'url(imagens/sociologia-bemEstar.jpg)'
+        carta[posiAmarelo[0]].style.backgroundSize = '100% 100%'
+        carta[posiAmarelo[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
+
+        mostrarExplicacao('imagens/sociologia-bemEstar.jpg', '177%', bemEstarExplicacao, 'Estado Social')
 
     } else if (cartasSelecionadas[0] == cartasMarrom[0] && cartasSelecionadas[1] == cartasMarrom[1] || cartasSelecionadas[1] == cartasMarrom[0] && cartasSelecionadas[0] == cartasMarrom[1]) {
 
-        carta[posiMarrom[0]].style.background = 'brown'
-        carta[posiMarrom[1]].style.background = 'brown'
+        carta[posiMarrom[0]].style.background = 'url(imagens/sociologia-neoLiberalismo.jpg)'
+    carta[posiMarrom[1]].style.background = 'url(imagens/sociologia-neoLiberalismo.jpg)'
+    carta[posiMarrom[0]].style.backgroundSize = '100% 100%'
+    carta[posiMarrom[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
+
+        mostrarExplicacao('imagens/sociologia-neoLiberalismo.jpg', '177%', neoliberalismoExplicacao, 'Estado Neoliberal')
 
     } else {
 
