@@ -4,6 +4,7 @@
     VERMELHO = ABSOLUTISMO
     AZUL = LIBERALISMO
     VERDE = SOVIÉTICO
+    PRETO = FASCISTA
 */
 
 var carta = []
@@ -44,6 +45,16 @@ var explicacao = document.getElementById('explicacao')
 var memorize = document.getElementById('alerta_comeco')
 var aviso = document.getElementById('aviso')
 var imgExplicacao = document.getElementById('img-explicacao')
+var pExplicacao = document.getElementById('texto-explicativo')
+var titulo = document.getElementById('titulo')
+
+var absolutismoExplicacao = 'Concentração de poder nas mãos do rei, não tendo um parlamento para aprovações de decisões e é totalmente identificado como Estado.'
+
+var sovieticaExplicacao = 'Surgiu a partir da Revolução Russa que começou no ano de 1917 com o objetivo de fazer frente às condições dos trabalhadores, urbanos e rurais e foi liderada por Josef Stalin dos anos 1924 até 1953'
+
+var liberalismoExplicacao = 'Se opôs ao governo controlador e centralizador do Estado absolutista, que tinha como principais características o acúmulo de riquezas, o controle da economia e uma relação de autoritarismo entre o governo e o povo.'
+
+var fascismoExplicacao = 'Essa forma de Estado foi implantada e se desenvolveu nas décadas de 1920 a 1940, primeiro na Itália, depois na Alemanha e em vários outros países europeus, com pequenas diferenças. A base econômica desse Estado era capitalista.'
 
 function controladora() {
     setTimeout (
@@ -118,8 +129,10 @@ function visualizacao() {
     carta[posiVerde[0]].style.backgroundSize = '100% 100%'
     carta[posiVerde[1]].style.backgroundSize = '100% 100%'
 
-    carta[posiPreto[0]].style.background = 'black'
-    carta[posiPreto[1]].style.background = 'black'
+    carta[posiPreto[0]].style.background = 'url(imagens/sociologia-fascista-cortada.jpg)'
+    carta[posiPreto[1]].style.background = 'url(imagens/sociologia-fascista-cortada.jpg)'
+    carta[posiPreto[0]].style.backgroundSize = '100% 100%'
+    carta[posiPreto[1]].style.backgroundSize = '100% 100%'
 
     carta[posiAmarelo[0]].style.background = 'yellow'
     carta[posiAmarelo[1]].style.background = 'yellow'
@@ -274,19 +287,30 @@ function mudaEstado(c){
     carta[c].style.boxShadow = '0px 0px 19px black'
     carta[c].style.zIndex = '2'
     if (c == posiVermelho[0] || c == posiVermelho[1]) {
+
         carta[c].style.background = 'url(imagens/sociologia-absolutismo.jpg)'
         carta[c].style.backgroundSize = '100% 100%'
+
     } else if (c == posiAzul[0] || c == posiAzul[1]) {
+
         carta[c].style.background = 'url(imagens/sociologia-liberalismo-cortada.jpg)'
         carta[c].style.backgroundSize = '100% 100%'
+
     } else if (c == posiVerde[0] || c == posiVerde[1]) {
+
         carta[c].style.background = 'url(imagens/sociologia-sovietico.jpg)'
         carta[c].style.backgroundSize = '100% 100%'
+
     } else if (c == posiPreto[0] || c == posiPreto[1]) {
-        carta[c].style.background = 'black'
+        carta[c].style.background = 'url(imagens/sociologia-fascista-cortada.jpg)'
+        carta[c].style.backgroundSize = '100% 100%'
+
     } else if (c == posiAmarelo[0] || c == posiAmarelo[1]) {
+
         carta[c].style.background = 'yellow'
+
     } else if (c == posiMarrom[0] || c == posiMarrom[1]) {
+
         carta[c].style.background = 'brown'
     } 
 }
@@ -313,7 +337,8 @@ function verificadorIgualdade(cartasSelecionadas) {
         carta[posiVermelho[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
-        mostrarExplicacao('imagens/sociologia-absolutismo.jpg', '86%')
+
+        mostrarExplicacao('imagens/sociologia-absolutismo.jpg', '105%', absolutismoExplicacao, 'Estado Absolutista')
 
     } else if (cartasSelecionadas[0] == cartasAzuis[0] && cartasSelecionadas[1] == cartasAzuis[1] || cartasSelecionadas[1] == cartasAzuis[0] && cartasSelecionadas[0] == cartasAzuis[1]) {
 
@@ -323,7 +348,8 @@ function verificadorIgualdade(cartasSelecionadas) {
         carta[posiAzul[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
-        mostrarExplicacao('imagens/sociologia-liberalismo.jpg', '86%')
+
+        mostrarExplicacao('imagens/sociologia-liberalismo.jpg', '201%', liberalismoExplicacao, 'Estado Liberal')
         
     } else if (cartasSelecionadas[0] == cartasVerde[0] && cartasSelecionadas[1] == cartasVerde[1] || cartasSelecionadas[1] == cartasVerde[0] && cartasSelecionadas[0] == cartasVerde[1]) {
        
@@ -333,14 +359,19 @@ function verificadorIgualdade(cartasSelecionadas) {
         carta[posiVerde[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
-        mostrarExplicacao('imagens/sociologia-sovietico.jpg', '86%')
+
+        mostrarExplicacao('imagens/sociologia-sovietico.jpg', '125%', sovieticaExplicacao, 'Estado Soviético')
 
     } else if (cartasSelecionadas[0] == cartasPreto[0] && cartasSelecionadas[1] == cartasPreto[1] || cartasSelecionadas[1] == cartasPreto[0] && cartasSelecionadas[0] == cartasPreto[1]) {
 
-        carta[posiPreto[0]].style.background = 'black'
-        carta[posiPreto[1]].style.background = 'black'
+        carta[posiPreto[0]].style.background = 'url(imagens/sociologia-fascista-cortada.jpg)'
+        carta[posiPreto[1]].style.background = 'url(imagens/sociologia-fascista-cortada.jpg)'
+        carta[posiPreto[0]].style.backgroundSize = '100% 100%'
+        carta[posiPreto[1]].style.backgroundSize = '100% 100%'
         paresFormados.push(cartasSelecionadas[0])
         paresFormados.push(cartasSelecionadas[1])
+
+        mostrarExplicacao('imagens/sociologia-fascista.jpg', '177%', fascismoExplicacao, 'Estado fascista')
 
     } else if (cartasSelecionadas[0] == cartasAmarelo[0] && cartasSelecionadas[1] == cartasAmarelo[1] || cartasSelecionadas[1] == cartasAmarelo[0] && cartasSelecionadas[0] == cartasAmarelo[1]) {
 
@@ -446,7 +477,7 @@ function voltarJogo() {
     }
 }
 
-function mostrarExplicacao(imagem, width) {
+function mostrarExplicacao(imagem, width, textoExplicacao, tituloExplicacao) {
     setTimeout (
         function(){
             memorize.style.display = 'flex'
@@ -454,6 +485,9 @@ function mostrarExplicacao(imagem, width) {
             aviso.style.display = 'none'
             imgExplicacao.setAttribute('src', imagem)
             imgExplicacao.style.width = width
+
+            pExplicacao.innerText = textoExplicacao
+            titulo.innerText = tituloExplicacao
         }, 500
     )
 }
